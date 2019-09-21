@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Interfaces.Writers;
+using System;
+using Writer.Writers;
 
 namespace Writer
 {
@@ -10,6 +8,23 @@ namespace Writer
     {
         static void Main(string[] args)
         {
+            IWriter consoleWriter = new ConsoleWriter();
+            Simulation.Random consoleSimulation = new Simulation.Random(consoleWriter);
+            Console.WriteLine("*********************************************");
+            Console.WriteLine("Console writer");
+            Console.WriteLine("*********************************************");
+            consoleSimulation.Run();
+
+            Console.WriteLine("");
+
+            IWriter fileWriter = new FileWriter("/Path/text.txt");
+            Simulation.Random fileSimulation = new Simulation.Random(fileWriter);
+            Console.WriteLine("*********************************************");
+            Console.WriteLine("File writer");
+            Console.WriteLine("*********************************************");
+            fileSimulation.Run();
+
+            Console.ReadLine();
         }
     }
 }

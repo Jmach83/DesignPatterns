@@ -45,6 +45,10 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Simulation\Random.cs" />
+    <Compile Include="Interfaces\IWriter.cs" />
+    <Compile Include="Writers\ConsoleWriter.cs" />
+    <Compile Include="Writers\FileWriter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
